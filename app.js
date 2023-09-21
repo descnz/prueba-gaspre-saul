@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended: true})) //
 const routes = require('./routes');
 
 // Use the routes
-app.use('/api', routes); // Assuming you want to prefix your routes with '/api'
+app.use('/api', routes); 
 
 // ...other middleware and setup
 

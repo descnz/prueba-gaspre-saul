@@ -5,10 +5,7 @@ const username= process.env.mysql_USERNAME;
 const password= process.env.mysql_PASSWORD;
 const host= process.env.mysql_HOST;
 
-// const database= "prueba";
-// const username= "candidatoPrueba";
-// const password= "gaspre21.M";
-// const host= "precios-1.c0f6dm2ucnlg.us-east-2.rds.amazonaws.com";
+
 
 
 //console.log(database, username, password, host)

@@ -7,8 +7,8 @@ const {
   getEstacionInfoCtrl
 } = require("../controllers/estacionesCompetidores");
 
-
-router.get("/read", getEstacionInfoCtrl);
+//http://localhost:3306/api/estacionesCompetidores/read
+router.get("/read/:id", getEstacionInfoCtrl);
 
 
 module.exports = router;

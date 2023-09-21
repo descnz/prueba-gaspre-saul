@@ -1,18 +1,25 @@
 const { sequelize } = require("../config/mysql");
 const { QueryTypes } = require("sequelize");
 
-/**
- * @param {} req  http://localhost:5000/api/unidades/...
- * @param {*} res   Query de la operacion
- */
-
 const getEstacionInfoCtrl = async (req, res) => {
   try {
-    console.log("test")
-    
+    console.log("test");
+
+    const id = parseInt(req.params.id);
+    console.log(`El id es ${id}`);
+
+
+      let query = "SELECT stations.name FROM stations where cre_id=:id ";
+
+      const dataUnidadModified = await sequelize.query(query, {
+        replacements: { id: `${id}` },
+        type: QueryTypes.SELECT,
+      });
+      console.log(dataUnidadModified)
+      res.status(200).json({ data: dataUnidadModified });
     
   } catch (e) {
-    handleHttpError(res, "ERROR_READ_cONTROLADOR");
+    res.status(500).json({ error: "ERROR_READ_CONTROLADOR" });
   }
 };
 
